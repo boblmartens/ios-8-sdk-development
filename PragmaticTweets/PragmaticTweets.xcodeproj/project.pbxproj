@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472E97231A80016A00C8E417 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 472E97221A80016A00C8E417 /* README.md */; };
 		C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */; };
 		C4ED899F19E9BB0600CFBC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899E19E9BB0600CFBC05 /* ViewController.swift */; };
 		C4ED89A219E9BB0600CFBC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED89A019E9BB0600CFBC05 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		472E97221A80016A00C8E417 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4ED899719E9BB0600CFBC05 /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED899B19E9BB0600CFBC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				C4ED89A319E9BB0600CFBC05 /* Images.xcassets */,
 				C4ED89A519E9BB0600CFBC05 /* LaunchScreen.xib */,
 				C4ED899A19E9BB0600CFBC05 /* Supporting Files */,
+				472E97221A80016A00C8E417 /* README.md */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472E97231A80016A00C8E417 /* README.md in Sources */,
 				C4ED899F19E9BB0600CFBC05 /* ViewController.swift in Sources */,
 				C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				C4ED89B819E9BB0600CFBC05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4ED89B919E9BB0600CFBC05 /* Build configuration list for PBXNativeTarget "PragmaticTweetsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				C4ED89BB19E9BB0600CFBC05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
