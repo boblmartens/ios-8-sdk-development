@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -32,10 +32,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ic6-77-Lzh" firstAttribute="top" secondItem="jxM-gm-cOZ" secondAttribute="bottom" constant="8" id="59w-lT-m7O"/>
+                            <constraint firstAttribute="centerX" secondItem="jxM-gm-cOZ" secondAttribute="centerX" id="78d-RB-UGW"/>
+                            <constraint firstAttribute="centerX" secondItem="ic6-77-Lzh" secondAttribute="centerX" id="AaD-N0-f2n"/>
+                            <constraint firstItem="ic6-77-Lzh" firstAttribute="top" secondItem="jxM-gm-cOZ" secondAttribute="bottom" constant="8" id="AdC-sv-Nvs"/>
                             <constraint firstAttribute="centerX" secondItem="ic6-77-Lzh" secondAttribute="centerX" id="CDe-jZ-tJN"/>
                             <constraint firstAttribute="centerX" secondItem="jxM-gm-cOZ" secondAttribute="centerX" id="DKf-Vt-qhx"/>
+                            <constraint firstAttribute="centerX" secondItem="ic6-77-Lzh" secondAttribute="centerX" id="LLo-2y-zhn"/>
+                            <constraint firstAttribute="centerX" secondItem="ic6-77-Lzh" secondAttribute="centerX" id="gha-Ab-vor"/>
                             <constraint firstItem="jxM-gm-cOZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iDg-au-xxG"/>
+                            <constraint firstItem="jxM-gm-cOZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u1z-5k-N0V"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DKf-Vt-qhx"/>
+                                <exclude reference="iDg-au-xxG"/>
+                                <exclude reference="59w-lT-m7O"/>
+                                <exclude reference="AaD-N0-f2n"/>
+                                <exclude reference="CDe-jZ-tJN"/>
+                                <exclude reference="gha-Ab-vor"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
