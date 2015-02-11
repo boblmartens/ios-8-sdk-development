@@ -9,9 +9,7 @@
 import UIKit
 import Social
 
-public class ViewController: UIViewController {
-
-    @IBOutlet public weak var twitterWebView: UIWebView!
+public class ViewController: UITableViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -24,26 +22,29 @@ public class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5
+    }
+    
+    public override func tableView(_tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
+    
+    public override func tableView(_tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section + 1
+    }
+    
+    public override func tableView(_tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        cell.textLabel!.text = "Row \(indexPath.row)"
+        return cell
+    }
+    
     @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
         reloadTweets()
     }
     
     func reloadTweets() {
-        let url = NSURL (string:"http://www.twitter.com/boblmartens")
-        let urlRequest = NSURLRequest (URL: url!)
-        twitterWebView.loadRequest(urlRequest)
     }
-
-    @IBAction func handleTweetButtonTapped(sender: UIButton) {
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-            let tweetVC = SLComposeViewController (forServiceType: SLServiceTypeTwitter)
-            let message = NSLocalizedString("I just finished the first project in iOS 8 SDK Development. #pragios8", comment: "")
-            tweetVC.setInitialText(message)
-            presentViewController(tweetVC, animated: true, completion: nil)
-        } else {
-            println("Can't send tweet")
-        }
-    }
-
 }
 
