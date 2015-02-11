@@ -43,9 +43,10 @@ public class ViewController: UITableViewController {
     }
     
     public override func tableView(_tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCellWithIdentifier("UserAndTweetCell") as UITableViewCell
         let parsedTweet = parsedTweets[indexPath.row]
-        cell.textLabel?.text = parsedTweet.tweetText
+        cell.textLabel?.text = parsedTweet.userName
+        cell.detailTextLabel?.text = parsedTweet.tweetText
         return cell
     }
     
