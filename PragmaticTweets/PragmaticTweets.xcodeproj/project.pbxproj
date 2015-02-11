@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47028CBE1A87FD8400BD1CFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47028CC01A87FD8400BD1CFA /* Localizable.strings */; };
+		4781E1151A8804CB009E079F /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781E1141A8804CB009E079F /* WebViewTests.swift */; };
 		C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */; };
 		C4ED899F19E9BB0600CFBC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899E19E9BB0600CFBC05 /* ViewController.swift */; };
 		C4ED89A219E9BB0600CFBC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED89A019E9BB0600CFBC05 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		47028CB61A87FB7900BD1CFA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		47028CBF1A87FD8400BD1CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47028CC11A87FD9C00BD1CFA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4781E1141A8804CB009E079F /* WebViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
 		C4ED899719E9BB0600CFBC05 /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED899B19E9BB0600CFBC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				C4ED89B219E9BB0600CFBC05 /* PragmaticTweetsTests.swift */,
 				C4ED89B019E9BB0600CFBC05 /* Supporting Files */,
+				4781E1141A8804CB009E079F /* WebViewTests.swift */,
 			);
 			path = PragmaticTweetsTests;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4ED89B319E9BB0600CFBC05 /* PragmaticTweetsTests.swift in Sources */,
+				4781E1151A8804CB009E079F /* WebViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
