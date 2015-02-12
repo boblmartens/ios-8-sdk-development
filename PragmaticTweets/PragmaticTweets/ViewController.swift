@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import Accounts
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
 
@@ -29,7 +30,39 @@ public class ViewController: UITableViewController {
     }
     
     func reloadTweets() {
-        tableView.reloadData()
+        let accountStore = ACAccountStore()
+        let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        accountStore.requestAccessToAccountsWithType(twitterAccountType, options: nil, completion: {
+            (granted: Bool, error: NSError!) -> Void in
+            if (!granted) {
+                println("account access not granted")
+            } else {
+                let twitterAccounts = accountStore.accountsWithAccountType(twitterAccountType)
+                if twitterAccounts.count == 0 {
+                    println("no twitter accounts configured")
+                    return
+                } else {
+                    let twitterParams = [ "count" : "100" ]
+                    let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+                    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: twitterAPIURL, parameters: twitterParams)
+                    request.account = twitterAccounts.first as ACAccount
+                    request.performRequestWithHandler({
+                        (data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!) -> Void in
+                        self.handleTwitterData(data, urlResponse: urlResponse, error: error)
+                    })
+                }
+            }
+        })
+    }
+    
+    func handleTwitterData (data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!) {
+        if let dataValue = data {
+            var parseError: NSError? = nil
+            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions(0), error: &parseError)
+            println("JSON error: \(parseError)\nJSON response: \(jsonObject)")
+        } else {
+            println("handleTwitterData received no data")
+        }
     }
 
     override public func didReceiveMemoryWarning() {
@@ -64,10 +97,6 @@ public class ViewController: UITableViewController {
             ParsedTweet (tweetText: "New row", userName: "@refresh", createdAt: NSDate().description, userAvatarURL: defaultAvatarURL))
         reloadTweets()
         refreshControl!.endRefreshing()
-    }
-    
-    @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
-        reloadTweets()
     }
 }
 
