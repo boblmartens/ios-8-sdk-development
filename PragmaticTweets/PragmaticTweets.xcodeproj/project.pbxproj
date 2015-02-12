@@ -11,7 +11,7 @@
 		475E33661A8C41750038A6F6 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475E33651A8C41750038A6F6 /* ParsedTweetCell.swift */; };
 		476396011A8BF11500AE86EA /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476396001A8BF11500AE86EA /* ParsedTweet.swift */; };
 		C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */; };
-		C4ED899F19E9BB0600CFBC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899E19E9BB0600CFBC05 /* ViewController.swift */; };
+		C4ED899F19E9BB0600CFBC05 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899E19E9BB0600CFBC05 /* RootViewController.swift */; };
 		C4ED89A219E9BB0600CFBC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED89A019E9BB0600CFBC05 /* Main.storyboard */; };
 		C4ED89A419E9BB0600CFBC05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED89A319E9BB0600CFBC05 /* Images.xcassets */; };
 		C4ED89A719E9BB0600CFBC05 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4ED89A519E9BB0600CFBC05 /* LaunchScreen.xib */; };
@@ -38,7 +38,7 @@
 		C4ED899719E9BB0600CFBC05 /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED899B19E9BB0600CFBC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4ED899E19E9BB0600CFBC05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4ED899E19E9BB0600CFBC05 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C4ED89A119E9BB0600CFBC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4ED89A319E9BB0600CFBC05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C4ED89A619E9BB0600CFBC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47999BCB1A8D4A1B001D3576 /* Root VC */ = {
+			isa = PBXGroup;
+			children = (
+				C4ED899E19E9BB0600CFBC05 /* RootViewController.swift */,
+				475E33651A8C41750038A6F6 /* ParsedTweetCell.swift */,
+			);
+			name = "Root VC";
+			sourceTree = "<group>";
+		};
+		47999BCC1A8D4A31001D3576 /* Twitter Classes */ = {
+			isa = PBXGroup;
+			children = (
+				476396001A8BF11500AE86EA /* ParsedTweet.swift */,
+			);
+			name = "Twitter Classes";
+			sourceTree = "<group>";
+		};
 		C4ED898E19E9BB0600CFBC05 = {
 			isa = PBXGroup;
 			children = (
@@ -86,14 +103,13 @@
 		C4ED899919E9BB0600CFBC05 /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
-				476396001A8BF11500AE86EA /* ParsedTweet.swift */,
 				C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */,
-				C4ED899E19E9BB0600CFBC05 /* ViewController.swift */,
+				47999BCC1A8D4A31001D3576 /* Twitter Classes */,
+				47999BCB1A8D4A1B001D3576 /* Root VC */,
 				C4ED89A019E9BB0600CFBC05 /* Main.storyboard */,
 				C4ED89A319E9BB0600CFBC05 /* Images.xcassets */,
 				C4ED89A519E9BB0600CFBC05 /* LaunchScreen.xib */,
 				C4ED899A19E9BB0600CFBC05 /* Supporting Files */,
-				475E33651A8C41750038A6F6 /* ParsedTweetCell.swift */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -228,7 +244,7 @@
 			files = (
 				475E33661A8C41750038A6F6 /* ParsedTweetCell.swift in Sources */,
 				476396011A8BF11500AE86EA /* ParsedTweet.swift in Sources */,
-				C4ED899F19E9BB0600CFBC05 /* ViewController.swift in Sources */,
+				C4ED899F19E9BB0600CFBC05 /* RootViewController.swift in Sources */,
 				C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
