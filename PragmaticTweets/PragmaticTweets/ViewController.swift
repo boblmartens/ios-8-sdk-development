@@ -26,6 +26,8 @@ public class ViewController: UITableViewController {
     }
     
     func reloadTweets() {
+        println(NSThread.isMainThread() ? "On main thread" : "Not on main thread")
+
         let accountStore = ACAccountStore()
         let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccountsWithType(twitterAccountType, options: nil, completion: {
@@ -70,7 +72,10 @@ public class ViewController: UITableViewController {
                     parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as String!)
                     self.parsedTweets.append(parsedTweet)
                 }
-                self.tableView.reloadData()
+                dispatch_async(dispatch_get_main_queue(),
+                    {
+                        self.tableView.reloadData()
+                })
             }
         } else {
             println("handleTwitterData received no data")
@@ -96,11 +101,20 @@ public class ViewController: UITableViewController {
         cell.userNameLabel.text = parsedTweet.userName
         cell.tweetTextLabel.text = parsedTweet.tweetText
         cell.createdAtLabel.text = parsedTweet.createdAt
-        if parsedTweet.userAvatarURL != nil {
-            if let imageData = NSData (contentsOfURL: parsedTweet.userAvatarURL!) {
-                cell.avatarImageView.image = UIImage (data: imageData)
-            }
-        }
+        cell.avatarImageView.image = nil
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+            {
+                if let imageData = NSData(contentsOfURL: parsedTweet.userAvatarURL!) {
+                    let avatarImage = UIImage(data: imageData)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if cell.userNameLabel.text == parsedTweet.userName {
+                            cell.avatarImageView.image = avatarImage
+                        } else {
+                            println("oops, wrong cell, never mind")
+                        }
+                    })
+                }
+        })
         return cell
     }
     
