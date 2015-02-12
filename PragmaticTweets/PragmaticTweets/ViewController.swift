@@ -9,7 +9,7 @@
 import UIKit
 import Social
 
-let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/aticky/default_profile_images/default_profile_6_200x200.png")
+let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
 
 public class ViewController: UITableViewController {
     
@@ -22,6 +22,9 @@ public class ViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         reloadTweets()
+        var refresher = UIRefreshControl()
+        refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl = refresher
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -43,11 +46,24 @@ public class ViewController: UITableViewController {
     }
     
     public override func tableView(_tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UserAndTweetCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as ParsedTweetCell
         let parsedTweet = parsedTweets[indexPath.row]
-        cell.textLabel?.text = parsedTweet.userName
-        cell.detailTextLabel?.text = parsedTweet.tweetText
+        cell.userNameLabel.text = parsedTweet.userName
+        cell.tweetTextLabel.text = parsedTweet.tweetText
+        cell.createdAtLabel.text = parsedTweet.createdAt
+        if parsedTweet.userAvatarURL != nil {
+            if let imageData = NSData (contentsOfURL: parsedTweet.userAvatarURL!) {
+                cell.avatarImageView.image = UIImage (data: imageData)
+            }
+        }
         return cell
+    }
+    
+    @IBAction func handleRefresh (sender: AnyObject?) {
+        parsedTweets.append(
+            ParsedTweet (tweetText: "New row", userName: "@refresh", createdAt: NSDate().description, userAvatarURL: defaultAvatarURL))
+        reloadTweets()
+        refreshControl!.endRefreshing()
     }
     
     @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
