@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		47028CBE1A87FD8400BD1CFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47028CC01A87FD8400BD1CFA /* Localizable.strings */; };
+		472D26601A8D97BC007CCF11 /* TwitterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D265F1A8D97BC007CCF11 /* TwitterAPIRequest.swift */; };
+		472D26621A8D9BBE007CCF11 /* TwitterAPIRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472D26611A8D9BBE007CCF11 /* TwitterAPIRequestDelegate.swift */; };
 		475E33661A8C41750038A6F6 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475E33651A8C41750038A6F6 /* ParsedTweetCell.swift */; };
 		476396011A8BF11500AE86EA /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476396001A8BF11500AE86EA /* ParsedTweet.swift */; };
 		C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED899C19E9BB0600CFBC05 /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 		47028CB61A87FB7900BD1CFA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		47028CBF1A87FD8400BD1CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47028CC11A87FD9C00BD1CFA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		472D265F1A8D97BC007CCF11 /* TwitterAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequest.swift; sourceTree = "<group>"; };
+		472D26611A8D9BBE007CCF11 /* TwitterAPIRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequestDelegate.swift; sourceTree = "<group>"; };
 		475E33651A8C41750038A6F6 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
 		476396001A8BF11500AE86EA /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsedTweet.swift; path = ../ParsedTweet.swift; sourceTree = "<group>"; };
 		C4ED899719E9BB0600CFBC05 /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				476396001A8BF11500AE86EA /* ParsedTweet.swift */,
+				472D265F1A8D97BC007CCF11 /* TwitterAPIRequest.swift */,
+				472D26611A8D9BBE007CCF11 /* TwitterAPIRequestDelegate.swift */,
 			);
 			name = "Twitter Classes";
 			sourceTree = "<group>";
@@ -243,8 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				475E33661A8C41750038A6F6 /* ParsedTweetCell.swift in Sources */,
+				472D26621A8D9BBE007CCF11 /* TwitterAPIRequestDelegate.swift in Sources */,
 				476396011A8BF11500AE86EA /* ParsedTweet.swift in Sources */,
 				C4ED899F19E9BB0600CFBC05 /* RootViewController.swift in Sources */,
+				472D26601A8D97BC007CCF11 /* TwitterAPIRequest.swift in Sources */,
 				C4ED899D19E9BB0600CFBC05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
