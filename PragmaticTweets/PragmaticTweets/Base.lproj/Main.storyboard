@@ -5,33 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="845-W1-8K5">
-            <objects>
-                <tableViewController id="zb4-6d-yIR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sLD-ec-PBZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cxp-rM-rsw">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxp-rM-rsw" id="xps-in-m4b">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zb4-6d-yIR" id="9MU-SS-cBO"/>
-                            <outlet property="delegate" destination="zb4-6d-yIR" id="M4A-aQ-ZSr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7nB-ER-8l8"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m6s-jI-5D3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="68" y="-331"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WFq-2S-6VB">
             <objects>
@@ -48,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-752" y="-332"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Tweets-->
         <scene sceneID="FbE-qJ-lqz">
             <objects>
                 <tableViewController id="VHh-PH-J5B" customClass="RootViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,11 +139,17 @@
                             <outlet property="delegate" destination="VHh-PH-J5B" id="crW-Ub-Xaf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XbA-i5-U1a"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="XbA-i5-U1a">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vhq-Tp-07Y">
+                            <connections>
+                                <action selector="handleTweetButtonTapped:" destination="VHh-PH-J5B" id="RKX-T7-KTy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Fd-iY-y2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="347"/>
+            <point key="canvasLocation" x="42" y="-332"/>
         </scene>
     </scenes>
 </document>

@@ -25,6 +25,17 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func handleTweetButtonTapped(sender: AnyObject) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+            let tweetVC = SLComposeViewController (forServiceType: SLServiceTypeTwitter)
+            let message = NSLocalizedString("I just finished the first prpject in iOS 8 SDK Development. #pragios8", comment: "")
+            tweetVC.setInitialText(message)
+            presentViewController(tweetVC, animated: true, completion: nil)
+        } else {
+            println("Can't send tweet")
+        }
+    }
+    
     func reloadTweets() {
         let twitterParams: Dictionary = ["count" : "100"]
         let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
