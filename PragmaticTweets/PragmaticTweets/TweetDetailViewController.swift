@@ -55,6 +55,18 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
                             self.userImageButton.setImage(UIImage(data: imageData), forState: UIControlState.Normal)
                         }
                     }
+                    
+                    if let entities = tweetDict["entities"] as? NSDictionary {
+                        if let media = entities["media"] as? NSArray {
+                            if let mediaString = media[0]["media_url"] as? String {
+                                if let mediaURL = NSURL(string: mediaString) {
+                                    if let mediaData = NSData(contentsOfURL: mediaURL) {
+                                        self.tweetImageView.image = UIImage(data: mediaData)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 })
             }
         } else {
