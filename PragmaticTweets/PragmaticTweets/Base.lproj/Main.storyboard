@@ -131,6 +131,7 @@
                                     <outlet property="createdAtLabel" destination="BGm-Bv-Z3X" id="7Dc-Lz-Vej"/>
                                     <outlet property="tweetTextLabel" destination="Mwv-SA-GPc" id="TAg-tC-O7H"/>
                                     <outlet property="userNameLabel" destination="iuc-tz-Uih" id="HWM-0P-9zm"/>
+                                    <segue destination="4gw-0w-vD2" kind="show" id="QXM-uV-97S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -150,6 +151,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Fd-iY-y2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42" y="-332"/>
+        </scene>
+        <!--Tweet-->
+        <scene sceneID="370-fD-1QJ">
+            <objects>
+                <viewController id="4gw-0w-vD2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V9F-DU-QUx"/>
+                        <viewControllerLayoutGuide type="bottom" id="M0Q-6h-sOy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nQ4-lC-rhq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweet" id="j3H-97-3vm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hkC-he-I73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="-350"/>
         </scene>
     </scenes>
 </document>
