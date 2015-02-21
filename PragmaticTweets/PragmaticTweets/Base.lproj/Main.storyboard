@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="730" y="-350"/>
         </scene>
-        <!--View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="a7I-3f-MZX">
             <objects>
-                <viewController id="5jF-v3-WX3" sceneMemberID="viewController">
+                <viewController id="5jF-v3-WX3" customClass="UserDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zpd-lN-0Go"/>
                         <viewControllerLayoutGuide type="bottom" id="7Hx-TQ-mEC"/>
