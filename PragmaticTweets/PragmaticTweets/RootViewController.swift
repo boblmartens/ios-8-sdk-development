@@ -60,6 +60,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     let userDict = tweetDict["user"] as NSDictionary
                     parsedTweet.userName = userDict["name"] as? String
                     parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as String!)
+                    parsedTweet.tweetIdString = tweetDict["id_str"] as? NSString
                     self.parsedTweets.append(parsedTweet)
                 }
                 dispatch_async(dispatch_get_main_queue(),
@@ -111,6 +112,16 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     @IBAction func handleRefresh (sender: AnyObject?) {
         reloadTweets()
         refreshControl!.endRefreshing()
+    }
+    
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTweetDetailsSegue" {
+            if let tweetDetailVC = segue.destinationViewController as? TweetDetailViewController {
+                let row = tableView!.indexPathForSelectedRow()!.row
+                let parsedTweet = parsedTweets[row] as ParsedTweet
+                tweetDetailVC.tweetIdSring = parsedTweet.tweetIdString
+            }
+        }
     }
 }
 

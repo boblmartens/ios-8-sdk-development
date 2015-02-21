@@ -13,6 +13,7 @@ class ParsedTweet: NSObject {
     var userName: String?
     var createdAt: String?
     var userAvatarURL: NSURL?
+    var tweetIdString: String?
     
     override init () {
         super.init()
