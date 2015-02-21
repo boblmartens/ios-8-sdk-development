@@ -119,7 +119,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
             if let tweetDetailVC = segue.destinationViewController as? TweetDetailViewController {
                 let row = tableView!.indexPathForSelectedRow()!.row
                 let parsedTweet = parsedTweets[row] as ParsedTweet
-                tweetDetailVC.tweetIdSring = parsedTweet.tweetIdString
+                tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
             }
         }
     }

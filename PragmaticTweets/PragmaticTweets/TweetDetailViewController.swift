@@ -8,15 +8,58 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController {
-    var tweetIdSring: String? {
+class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
+    @IBOutlet weak var userImageButton: UIButton!
+    @IBOutlet weak var userRealNameLabel: UILabel!
+    @IBOutlet weak var userScreenNameLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var tweetImageView: UIImageView!
+    
+    var tweetIdString: String? {
         didSet {
             reloadTweetDetails()
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadTweetDetails()
+    }
+    
     func reloadTweetDetails() {
-        
+        if tweetIdString == nil {
+            return
+        }
+        let twitterRequest = TwitterAPIRequest()
+        let twitterParams = ["id": tweetIdString!]
+        let twitterAPIULR = NSURL (string: "https://api.twitter.com/1.1/statuses/show.json")
+        twitterRequest.sendTwitterRequest(twitterAPIULR, params: twitterParams, delegate: self)
+    }
+    
+    func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
+        if let dataValue = data {
+            var parseError: NSError? = nil
+            let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions(0), error: &parseError)
+            if let tweetDict = jsonObject as? [String: AnyObject] {
+                dispatch_async(dispatch_get_main_queue(), {
+                    println("\(tweetDict)")
+                    let userDict = tweetDict["user"] as NSDictionary
+                    self.userRealNameLabel.text = userDict["name"] as? NSString
+                    self.userScreenNameLabel.text = userDict["screen_name"] as? NSString
+                    self.tweetTextLabel.text = tweetDict["text"] as? NSString
+                    let userImageURL = NSURL (string: userDict["profile_image_url"] as NSString!)
+                    self.userImageButton.setTitle(nil, forState: UIControlState.Normal)
+                    
+                    if userImageURL != nil {
+                        if let imageData = NSData(contentsOfURL: userImageURL!) {
+                            self.userImageButton.setImage(UIImage(data: imageData), forState: UIControlState.Normal)
+                        }
+                    }
+                })
+            }
+        } else {
+            println("handleTwitterData received no data")
+        }
     }
 
     override func viewDidLoad() {
