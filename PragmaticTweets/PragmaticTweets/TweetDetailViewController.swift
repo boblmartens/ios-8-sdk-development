@@ -21,6 +21,10 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
         }
     }
     
+    @IBAction func unwindToTweetDetailVC (segue: UIStoryboardSegue?) {
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         reloadTweetDetails()
@@ -71,6 +75,14 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             }
         } else {
             println("handleTwitterData received no data")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showUserDetailsSegue") {
+            if let userDetailVC = segue.destinationViewController as? UserDetailViewController {
+                userDetailVC.screenName = userScreenNameLabel.text
+            }
         }
     }
 

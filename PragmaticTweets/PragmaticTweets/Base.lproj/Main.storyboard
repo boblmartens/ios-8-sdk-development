@@ -152,6 +152,80 @@
             </objects>
             <point key="canvasLocation" x="42" y="-332"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9fS-yN-Rrb">
+            <objects>
+                <viewController id="QpH-DK-cup" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0IH-aQ-pgX"/>
+                        <viewControllerLayoutGuide type="bottom" id="wvY-0c-7ES"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tzp-cN-iwe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJm-dT-IoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="1128"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="gS8-md-tjW">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="ldl-PZ-jeE" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p6v-Qh-xur">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tYX-tX-qWb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tYX-tX-qWb" id="1l6-e5-LBu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ldl-PZ-jeE" id="hSC-H0-E2i"/>
+                            <outlet property="delegate" destination="ldl-PZ-jeE" id="hzB-VY-Aiv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="teL-v3-ayk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJs-LN-jMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hZU-RB-GNu">
+            <objects>
+                <navigationController id="bRN-lO-DbS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9fO-D1-hyk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ldl-PZ-jeE" kind="relationship" relationship="rootViewController" id="iNO-DH-ZQu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRO-C3-sqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="468"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Ysl-uh-m38">
+            <objects>
+                <splitViewController id="Sky-fR-O7Y" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="bRN-lO-DbS" kind="relationship" relationship="masterViewController" id="yCC-hh-L29"/>
+                        <segue destination="QpH-DK-cup" kind="relationship" relationship="detailViewController" id="P0X-3x-DwZ"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6PH-eg-VjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-752" y="800"/>
+        </scene>
         <!--Tweet-->
         <scene sceneID="370-fD-1QJ">
             <objects>
@@ -174,7 +248,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5jF-v3-WX3" kind="presentation" identifier="showUserDefailtsSegue" id="rBP-I2-JZQ"/>
+                                    <segue destination="5jF-v3-WX3" kind="presentation" identifier="showUserDetailsSegue" id="rBP-I2-JZQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-Xg-ea7">
@@ -239,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkC-he-I73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="-350"/>
+            <point key="canvasLocation" x="918" y="-330"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="a7I-3f-MZX">
@@ -289,6 +363,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WaW-sM-zTJ" kind="unwind" unwindAction="unwindToTweetDetailVC:" id="Ppr-t4-WbQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,10 +388,18 @@
                             <constraint firstItem="lAi-jB-qYz" firstAttribute="leading" secondItem="xiV-NR-VTU" secondAttribute="leadingMargin" id="xSN-Yp-c3m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userDescriptionLabel" destination="a0W-cc-3E2" id="Ytj-SP-Mzn"/>
+                        <outlet property="userImageView" destination="6PX-QU-gra" id="Yht-Ou-9m9"/>
+                        <outlet property="userLocationLabel" destination="5xT-g9-n4m" id="dPU-Rq-Q7O"/>
+                        <outlet property="userRealNameLabel" destination="lAi-jB-qYz" id="zNh-ki-zCb"/>
+                        <outlet property="userScreenNameLabel" destination="1mv-po-J2I" id="p1j-Bz-wh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="car-hu-Mk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WaW-sM-zTJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-354"/>
+            <point key="canvasLocation" x="1618" y="-334"/>
         </scene>
     </scenes>
 </document>
