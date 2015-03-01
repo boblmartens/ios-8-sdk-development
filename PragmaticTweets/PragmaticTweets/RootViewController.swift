@@ -12,7 +12,7 @@ import Accounts
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_6_200x200.png")
 
-public class RootViewController: UITableViewController, TwitterAPIRequestDelegate {
+public class RootViewController: UITableViewController, TwitterAPIRequestDelegate, UISplitViewControllerDelegate {
     
     var parsedTweets: [ParsedTweet] = []
     
@@ -23,6 +23,10 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl = refresher
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if splitViewController != nil {
+            splitViewController!.delegate = self
+        }
     }
     
     @IBAction func handleTweetButtonTapped(sender: AnyObject) {
@@ -71,6 +75,10 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         } else {
             println("handleTwitterData received no data")
         }
+    }
+    
+    func splitViewController(splitViewController: UISplitViewController!, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
+        return true
     }
 
     override public func didReceiveMemoryWarning() {
@@ -122,6 +130,23 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                 tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
             }
         }
+    }
+    
+    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let parsedTweet = parsedTweets[indexPath.row]
+        if self.splitViewController!.viewControllers.count > 1 {
+            if let tweetDetailNav = self.splitViewController!.viewControllers[1] as? UINavigationController {
+                if let tweetDetailVC = tweetDetailNav.viewControllers[0] as? TweetDetailViewController {
+                    tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
+                }
+            }
+        } else {
+            if let detailVC = storyboard!.instantiateViewControllerWithIdentifier("TweetDetailVC") as? TweetDetailViewController {
+                detailVC.tweetIdString = parsedTweet.tweetIdString
+                splitViewController!.showDetailViewController(detailVC, sender: self)
+            }
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
 }
 

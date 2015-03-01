@@ -183,7 +183,7 @@
         <!--Tweet-->
         <scene sceneID="370-fD-1QJ">
             <objects>
-                <viewController id="4gw-0w-vD2" customClass="TweetDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetDetailVC" id="4gw-0w-vD2" customClass="TweetDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V9F-DU-QUx"/>
                         <viewControllerLayoutGuide type="bottom" id="M0Q-6h-sOy"/>
