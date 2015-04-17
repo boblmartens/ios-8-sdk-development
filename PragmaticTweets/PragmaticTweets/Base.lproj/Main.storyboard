@@ -305,7 +305,7 @@
                                     <constraint firstAttribute="height" constant="100" id="Ylw-Nn-rZm"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mP5-Vb-KnL" appends="YES" id="aFI-1a-h5y"/>
+                                    <outletCollection property="gestureRecognizers" destination="mP5-Vb-KnL" appends="YES" id="Gof-F1-uAP"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAi-jB-qYz">
@@ -380,7 +380,7 @@
                 <exit id="WaW-sM-zTJ" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="mP5-Vb-KnL">
                     <connections>
-                        <segue destination="jDW-eM-rp5" kind="presentation" id="VGE-ph-YTY"/>
+                        <segue destination="jDW-eM-rp5" kind="presentation" id="W44-36-MhH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -411,7 +411,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LEx-q3-wdg" kind="unwind" unwindAction="unwindToUserDetailVC:" id="KoZ-pP-kI8"/>
+                                    <segue destination="LEx-q3-wdg" kind="unwind" unwindAction="unwindToUserDetailVC:" id="Y96-97-LQm"/>
                                 </connections>
                             </button>
                         </subviews>
