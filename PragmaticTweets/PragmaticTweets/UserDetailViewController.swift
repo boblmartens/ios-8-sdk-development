@@ -52,6 +52,10 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             }
         }
     }
+    
+    @IBAction func unwindToUserDetailVC (segue: UIStoryboardSegue) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
