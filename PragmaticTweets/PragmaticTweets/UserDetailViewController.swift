@@ -39,11 +39,11 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             
             if let tweetDict = jsonObject as? [String:AnyObject] {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.userRealNameLabel.text = tweetDict["name"] as? NSString
-                    self.userScreenNameLabel.text = tweetDict["screen_name"] as? NSString
-                    self.userLocationLabel.text = tweetDict["location"] as? NSString
-                    self.userDescriptionLabel.text = tweetDict["description"] as? NSString
-                    if let userImageURL = NSURL (string: tweetDict["profile_image_url"] as NSString) {
+                    self.userRealNameLabel.text = tweetDict["name"] as? String
+                    self.userScreenNameLabel.text = tweetDict["screen_name"] as? String
+                    self.userLocationLabel.text = tweetDict["location"] as? String
+                    self.userDescriptionLabel.text = tweetDict["description"] as? String
+                    if let userImageURL = NSURL (string: tweetDict["profile_image_url"] as! String) {
                         if let userImgaeData = NSData(contentsOfURL: userImageURL) {
                             self.userImageView.image = UIImage(data: userImgaeData)
                         }

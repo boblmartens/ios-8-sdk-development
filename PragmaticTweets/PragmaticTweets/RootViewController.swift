@@ -61,10 +61,10 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     let parsedTweet = ParsedTweet()
                     parsedTweet.tweetText = tweetDict["text"] as? String
                     parsedTweet.createdAt = tweetDict["created_at"] as? String
-                    let userDict = tweetDict["user"] as NSDictionary
+                    let userDict = tweetDict["user"] as! NSDictionary
                     parsedTweet.userName = userDict["name"] as? String
-                    parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as String!)
-                    parsedTweet.tweetIdString = tweetDict["id_str"] as? NSString
+                    parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as! String!)
+                    parsedTweet.tweetIdString = tweetDict["id_str"] as! NSString as String
                     self.parsedTweets.append(parsedTweet)
                 }
                 dispatch_async(dispatch_get_main_queue(),
@@ -77,7 +77,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         }
     }
     
-    func splitViewController(splitViewController: UISplitViewController!, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
+    public func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
         return true
     }
 
@@ -95,7 +95,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     }
     
     public override func tableView(_tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as ParsedTweetCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as! ParsedTweetCell
         let parsedTweet = parsedTweets[indexPath.row]
         cell.userNameLabel.text = parsedTweet.userName
         cell.tweetTextLabel.text = parsedTweet.tweetText

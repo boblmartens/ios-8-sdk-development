@@ -47,11 +47,11 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             if let tweetDict = jsonObject as? [String: AnyObject] {
                 dispatch_async(dispatch_get_main_queue(), {
                     println("\(tweetDict)")
-                    let userDict = tweetDict["user"] as NSDictionary
-                    self.userRealNameLabel.text = userDict["name"] as? NSString
-                    self.userScreenNameLabel.text = userDict["screen_name"] as? NSString
-                    self.tweetTextLabel.text = tweetDict["text"] as? NSString
-                    let userImageURL = NSURL (string: userDict["profile_image_url"] as NSString!)
+                    let userDict = tweetDict["user"] as! NSDictionary
+                    self.userRealNameLabel.text = userDict["name"] as? String
+                    self.userScreenNameLabel.text = userDict["screen_name"] as? String
+                    self.tweetTextLabel.text = tweetDict["text"] as? String
+                    let userImageURL = NSURL (string: userDict["profile_image_url"] as! String)
                     self.userImageButton.setTitle(nil, forState: UIControlState.Normal)
                     
                     if userImageURL != nil {

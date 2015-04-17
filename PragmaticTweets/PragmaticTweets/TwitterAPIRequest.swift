@@ -30,7 +30,7 @@ class TwitterAPIRequest: NSObject {
                             requestMethod: SLRequestMethod.GET,
                             URL: requestURL,
                             parameters: params)
-                        request.account = twitterAccounts.first as ACAccount
+                        request.account = twitterAccounts.first as! ACAccount
                         request.performRequestWithHandler({
                             (data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!) -> Void in
                             delegate!.handleTwitterData(data,
