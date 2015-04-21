@@ -340,16 +340,16 @@
                 <exit id="hFr-6v-adc" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="JcW-vw-3gU">
                     <connections>
-                        <segue destination="erQ-C2-u5T" kind="presentation" id="Mkq-Ee-0Rp"/>
+                        <segue destination="erQ-C2-u5T" kind="presentation" identifier="showUserImageDetailSegue" id="Mkq-Ee-0Rp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1374" y="-1035"/>
         </scene>
-        <!--View Controller-->
+        <!--User Image Detail View Controller-->
         <scene sceneID="jyq-nr-I1g">
             <objects>
-                <viewController id="erQ-C2-u5T" sceneMemberID="viewController">
+                <viewController id="erQ-C2-u5T" customClass="UserImageDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9s8-nN-m7O"/>
                         <viewControllerLayoutGuide type="bottom" id="vx1-zg-VM7"/>
@@ -389,6 +389,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="lrd-XJ-mD5" id="JIR-hG-Dgj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1c-l7-Eeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lRE-L4-m4L" userLabel="Exit" sceneMemberID="exit"/>

@@ -21,6 +21,7 @@
 		01304D7E1A1040CA00037FD0 /* TwitterAPIRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304D7D1A1040CA00037FD0 /* TwitterAPIRequestDelegate.swift */; };
 		01304D811A10657400037FD0 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01304D801A10657400037FD0 /* TweetDetailViewController.swift */; };
 		01A4EB5E1A17B92D00FB637F /* SizeClassOverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4EB5D1A17B92D00FB637F /* SizeClassOverrideViewController.swift */; };
+		4789CBA31AE6BE4100D8165D /* UserImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789CBA21AE6BE4100D8165D /* UserImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		01304D7D1A1040CA00037FD0 /* TwitterAPIRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequestDelegate.swift; sourceTree = "<group>"; };
 		01304D801A10657400037FD0 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		01A4EB5D1A17B92D00FB637F /* SizeClassOverrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassOverrideViewController.swift; sourceTree = "<group>"; };
+		4789CBA21AE6BE4100D8165D /* UserImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		01203AA519F438A80013ABA4 /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				4789CBA11AE6BE1400D8165D /* User Image Detail VC */,
 				01203AA819F438A80013ABA4 /* AppDelegate.swift */,
 				01304D791A103EB700037FD0 /* Root VC */,
 				01304D7F1A10653C00037FD0 /* Tweet Detail VC */,
@@ -179,6 +182,14 @@
 				01A4EB5D1A17B92D00FB637F /* SizeClassOverrideViewController.swift */,
 			);
 			name = "Size Class Override";
+			sourceTree = "<group>";
+		};
+		4789CBA11AE6BE1400D8165D /* User Image Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				4789CBA21AE6BE4100D8165D /* UserImageDetailViewController.swift */,
+			);
+			name = "User Image Detail VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				01A4EB5E1A17B92D00FB637F /* SizeClassOverrideViewController.swift in Sources */,
 				011DD7161A0328B700A15038 /* ParsedTweet.swift in Sources */,
 				01203AAB19F438A80013ABA4 /* RootViewController.swift in Sources */,
+				4789CBA31AE6BE4100D8165D /* UserImageDetailViewController.swift in Sources */,
 				01304D7C1A10407100037FD0 /* TwitterAPIRequest.swift in Sources */,
 				01304D811A10657400037FD0 /* TweetDetailViewController.swift in Sources */,
 				01203AA919F438A80013ABA4 /* AppDelegate.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
 
   var screenName : String?
+  var userImageURL : NSURL?
   
   @IBOutlet weak var userImageView: UIImageView!
   @IBOutlet weak var userRealNameLabel: UILabel!
@@ -62,11 +63,19 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
               self.userScreenNameLabel.text = tweetDict["screen_name"] as? String
               self.userLocationLabel.text = tweetDict["location"] as? String
               self.userDescriptionLabel.text = tweetDict["description"] as? String
-              if let userImageURL = NSURL (string:
-                tweetDict ["profile_image_url"] as! String) {
+              
+              if let userImageURL = NSURL (string: tweetDict ["profile_image_url"] as! String) {
                   if let userImageData = NSData (contentsOfURL: userImageURL) {
                     self.userImageView.image = UIImage(data:userImageData)
                   }
+              }
+              
+              self.userImageURL = NSURL (string: tweetDict["profile_image_url"] as! String!)
+              
+              if self.userImageURL != nil {
+                if let userImageData = NSData(contentsOfURL: self.userImageURL!) {
+                  self.userImageView.image = UIImage(data: userImageData)
+                }
               }
           })
         }
@@ -74,6 +83,16 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
   }
 
   @IBAction func unwindToUserDetailVC (segue : UIStoryboardSegue) {
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showUserImageDetailSegue" {
+      if let imageDetailVC = segue.destinationViewController as? UserImageDetailViewController {
+        var urlString = userImageURL!.absoluteString
+        urlString = urlString!.stringByReplacingOccurrencesOfString("_normal", withString: "")
+        imageDetailVC.userImageURL = NSURL(string: urlString!)
+      }
+    }
   }
 
   
