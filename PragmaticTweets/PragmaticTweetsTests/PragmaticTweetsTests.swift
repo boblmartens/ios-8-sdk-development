@@ -2,8 +2,8 @@
 //  PragmaticTweetsTests.swift
 //  PragmaticTweetsTests
 //
-//  Created by Bob Martens on 10/11/14.
-//  Copyright (c) 2014 Bob Martens. All rights reserved.
+//  Created by Chris Adamson on 10/19/14.
+//  Copyright (c) 2014 Pragmatic Programmers, LLC. All rights reserved.
 //
 
 import UIKit
@@ -21,11 +21,11 @@ class PragmaticTweetsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssertFalse(false, "Pass")
-    }
-    
+  func testExample() {
+    // This is an example of a functional test case.
+    XCTAssert(true, "Pass")
+  }
+  
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

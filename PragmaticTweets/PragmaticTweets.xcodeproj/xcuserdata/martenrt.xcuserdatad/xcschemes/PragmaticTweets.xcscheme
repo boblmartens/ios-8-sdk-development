@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4ED899619E9BB0600CFBC05"
+               BlueprintIdentifier = "01203AA219F438A70013ABA4"
                BuildableName = "PragmaticTweets.app"
                BlueprintName = "PragmaticTweets"
                ReferencedContainer = "container:PragmaticTweets.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4ED89AB19E9BB0600CFBC05"
+               BlueprintIdentifier = "01203AB719F438A80013ABA4"
                BuildableName = "PragmaticTweetsTests.xctest"
                BlueprintName = "PragmaticTweetsTests"
                ReferencedContainer = "container:PragmaticTweets.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4ED89AB19E9BB0600CFBC05"
+               BlueprintIdentifier = "01203AB719F438A80013ABA4"
                BuildableName = "PragmaticTweetsTests.xctest"
                BlueprintName = "PragmaticTweetsTests"
                ReferencedContainer = "container:PragmaticTweets.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4ED899619E9BB0600CFBC05"
+            BlueprintIdentifier = "01203AA219F438A70013ABA4"
             BuildableName = "PragmaticTweets.app"
             BlueprintName = "PragmaticTweets"
             ReferencedContainer = "container:PragmaticTweets.xcodeproj">
@@ -72,10 +72,11 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4ED899619E9BB0600CFBC05"
+            BlueprintIdentifier = "01203AA219F438A70013ABA4"
             BuildableName = "PragmaticTweets.app"
             BlueprintName = "PragmaticTweets"
             ReferencedContainer = "container:PragmaticTweets.xcodeproj">
@@ -90,10 +91,11 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4ED899619E9BB0600CFBC05"
+            BlueprintIdentifier = "01203AA219F438A70013ABA4"
             BuildableName = "PragmaticTweets.app"
             BlueprintName = "PragmaticTweets"
             ReferencedContainer = "container:PragmaticTweets.xcodeproj">

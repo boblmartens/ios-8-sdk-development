@@ -1,6 +1,6 @@
 
-/* Class = "IBUIButton"; normalTitle = "Show My Tweets"; ObjectID = "A2i-c0-TTp"; */
-"A2i-c0-TTp.normalTitle" = "Envoyer Tweets";
+/* Class = "IBUIButton"; normalTitle = "Send Tweet"; ObjectID = "93C-gT-zsq"; */
+"93C-gT-zsq.normalTitle" = "Envoyer Tweet";
 
-/* Class = "IBUIButton"; normalTitle = "Send Tweet"; ObjectID = "ic6-77-Lzh"; */
-"ic6-77-Lzh.normalTitle" = "Voir mes Tweets";
+/* Class = "IBUIButton"; normalTitle = "Show My Tweets"; ObjectID = "mzU-pa-xNW"; */
+"mzU-pa-xNW.normalTitle" = "Voir mes Tweets";

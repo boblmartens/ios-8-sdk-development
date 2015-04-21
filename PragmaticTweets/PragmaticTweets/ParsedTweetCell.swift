@@ -2,18 +2,20 @@
 //  ParsedTweetCell.swift
 //  PragmaticTweets
 //
-//  Created by Bob Martens on 2/11/15.
-//  Copyright (c) 2015 Bob Martens. All rights reserved.
+//  Created by Chris Adamson on 10/31/14.
+//  Copyright (c) 2014 Pragmatic Programmers, LLC. All rights reserved.
 //
 
 import UIKit
 
 class ParsedTweetCell: UITableViewCell {
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var tweetTextLabel: UILabel!
-    @IBOutlet weak var createdAtLabel: UILabel!
 
+  @IBOutlet weak var avatarImageView: UIImageView!
+  @IBOutlet weak var userNameLabel: UILabel!
+  @IBOutlet weak var tweetTextLabel: UILabel!
+  @IBOutlet weak var createdAtLabel: UILabel!
+  
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
